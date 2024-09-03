@@ -1,0 +1,71 @@
+{
+  "specs": [
+    {
+      "title": "Spec-Up-T Starterpack",
+      "spec_directory": "./spec",
+      "spec_terms_directory": "terms-definitions",
+      "output_path": "./docs",
+      "markdown_paths": [
+        "intro.md",
+        "terms-and-definitions-intro.md",
+        "terms-definitions/term-1.md",
+        "terms-definitions/term-2.md",
+        "terms-definitions/term-3.md",
+        "terms-definitions/term-4.md",
+        "example-markup-in-markdown.md",
+        "outro.md"
+      ],
+      "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
+      "logo_link": "https://github.com/blockchainbird/spec-up-t",
+      "source": {
+        "host": "github",
+        "account": "blockchainbird",
+        "repo": "spec-up-t-demo-on-documentation-website"
+      },
+      "external_specs": [
+        {
+          "PE": "https://identity.foundation/presentation-exchange"
+        },
+        {
+          "test-1": "https://blockchainbird.github.io/spec-up-xref-test-1/"
+        },
+        {
+          "test-2": "https://blockchainbird.github.io/spec-up-xref-test-2/"
+        }
+      ],
+      "external_specs_repos": [
+        {
+          "external_spec": "PE",
+          "url": "https://github.com/decentralized-identity/presentation-exchange",
+          "terms_dir": "spec"
+        },
+        {
+          "external_spec": "test-1",
+          "url": "https://github.com/blockchainbird/spec-up-xref-test-1",
+          "terms_dir": "spec/term-definitions"
+        },
+        {
+          "external_spec": "test-2",
+          "url": "https://github.com/blockchainbird/spec-up-xref-test-2",
+          "terms_dir": "spec/term-definitions"
+        }
+      ],
+      "assets": [
+        {
+          "path": "/custom-assets/custom.css"
+        },
+        {
+          "path": "/custom-assets/custom-head.js",
+          "inject": "head"
+        },
+        {
+          "path": "/custom-assets/custom-body.js",
+          "inject": "body",
+          "module": true
+        }
+      ],
+      "katex": false,
+      "searchHighlightStyle": "ssi"
+    }
+  ]
+}
