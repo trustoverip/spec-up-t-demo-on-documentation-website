@@ -12,7 +12,8 @@ const allTermRelations = {
         "Term 3"
       ],
       "xrefs": [
-        "test-1, Aal"
+        "test-1, Aal",
+        "does-not-exist, Foo"
       ]
     },
     {
