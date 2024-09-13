@@ -42,6 +42,20 @@ const allTermRelations = {
         "term four",
         "Term Four"
       ]
+    },
+    {
+      "term": "term 5",
+      "synonyms": [
+        "term five",
+        "Term Five"
+      ]
+    },
+    {
+      "term": "term 6",
+      "synonyms": [
+        "term six",
+        "Term Six"
+      ]
     }
   ]
 };
