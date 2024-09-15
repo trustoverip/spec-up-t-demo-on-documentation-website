@@ -141,7 +141,7 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
-    echo "   [0] Publish (= [6]+[2]+[3]+[1]"
+    echo "   [0] Publish ¹"
     echo "   "
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
@@ -154,6 +154,7 @@ function display_intro() {
     echo "   [Q] Quit"
     echo " "
     echo " "
+    echo "   ¹ Publish = [6]+[2]+[3]+[1]"
 
 }
 
