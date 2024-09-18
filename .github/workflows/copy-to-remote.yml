@@ -22,12 +22,20 @@ jobs:
       - name: Add Known Hosts
         run: |
           echo "${{ secrets.SSH_KNOWN_HOSTS_DWARSHUIS }}" >> ~/.ssh/known_hosts
-          
+
+      - name: Install expect
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y expect
+
       - name: Add SSH Key with Passphrase
         run: |
-          echo "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}" | ssh-add -
-        env:
-          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}
+          /usr/bin/expect <<EOF
+          spawn ssh-add -
+          expect "Enter passphrase for"
+          send "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}\r"
+          expect eof
+          EOF
 
       - name: Copy /docs to Remote
         run: |
