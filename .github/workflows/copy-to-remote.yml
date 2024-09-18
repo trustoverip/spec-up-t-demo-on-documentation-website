@@ -21,7 +21,7 @@ jobs:
 
       - name: Add Known Hosts
         run: |
-          echo "${{ secrets.SSH_KNOWN_HOSTS__DWARSHUIS }}" >> ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_KNOWN_HOSTS_DWARSHUIS }}" >> ~/.ssh/known_hosts
           
       - name: Add SSH Key with Passphrase
         run: |
