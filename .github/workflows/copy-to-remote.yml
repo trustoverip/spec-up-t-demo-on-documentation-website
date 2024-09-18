@@ -19,6 +19,16 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_DWARSHUIS }}
 
+      - name: Add Known Hosts
+        run: |
+          echo "${{ secrets.SSH_KNOWN_HOSTS__DWARSHUIS }}" >> ~/.ssh/known_hosts
+          
+      - name: Add SSH Key with Passphrase
+        run: |
+          echo "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}" | ssh-add -
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}
+
       - name: Copy /docs to Remote
         run: |
           scp -r ./docs user@dwarshuis.com:/test/spec-up-t-demo-on-documentation-website
