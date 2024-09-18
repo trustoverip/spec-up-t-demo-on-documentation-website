@@ -34,7 +34,7 @@ jobs:
           spawn ssh-add -
           expect "Enter passphrase for"
           send "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}\r"
-          expect eof
+          interact
           EOF
 
       - name: Copy /docs to Remote
