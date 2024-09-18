@@ -20,19 +20,17 @@ jobs:
         run: |
           echo "${{ secrets.SSH_KNOWN_HOSTS_DWARSHUIS }}" >> ~/.ssh/known_hosts
 
-      - name: Install expect
+      - name: Create SSH Askpass Script
         run: |
-          sudo apt-get update
-          sudo apt-get install -y expect
+          echo 'echo "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}"' > /tmp/askpass.sh
+          chmod +x /tmp/askpass.sh
 
-      - name: Add SSH Key with Passphrase
+      - name: Add SSH Key with Passphrase using Askpass
+        env:
+          SSH_ASKPASS: /tmp/askpass.sh
+          DISPLAY: "none"  # required by SSH_ASKPASS
         run: |
-          /usr/bin/expect <<EOF
-          spawn ssh-add /dev/null
-          expect "Enter passphrase for"
-          send "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}\r"
-          interact
-          EOF
+          setsid ssh-add
 
       - name: Copy /docs to Remote
         run: |
