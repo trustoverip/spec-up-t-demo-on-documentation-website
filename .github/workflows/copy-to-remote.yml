@@ -1,9 +1,6 @@
 name: Copy Docs to Remote
 
 on:
-  # push:
-  #   branches:
-  #     - main
   workflow_dispatch:
 
 jobs:
@@ -31,7 +28,7 @@ jobs:
       - name: Add SSH Key with Passphrase
         run: |
           /usr/bin/expect <<EOF
-          spawn ssh-add -
+          spawn ssh-add /dev/null
           expect "Enter passphrase for"
           send "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}\r"
           interact
