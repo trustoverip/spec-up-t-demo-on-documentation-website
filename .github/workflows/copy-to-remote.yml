@@ -20,18 +20,6 @@ jobs:
         run: |
           echo "${{ secrets.SSH_KNOWN_HOSTS_DWARSHUIS }}" >> ~/.ssh/known_hosts
 
-      - name: Create SSH Askpass Script
-        run: |
-          echo 'echo "${{ secrets.SSH_PASSPHRASE_DWARSHUIS }}"' > /tmp/askpass.sh
-          chmod +x /tmp/askpass.sh
-
-      - name: Add SSH Key with Passphrase using Askpass
-        env:
-          SSH_ASKPASS: /tmp/askpass.sh
-          DISPLAY: "none"  # required by SSH_ASKPASS
-        run: |
-          setsid ssh-add
-
       - name: Copy /docs to Remote
         run: |
           scp -r ./docs user@dwarshuis.com:/test/spec-up-t-demo-on-documentation-website
