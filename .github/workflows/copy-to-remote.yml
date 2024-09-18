@@ -22,6 +22,6 @@ jobs:
 
       - name: Copy /docs to Remote
         run: |
-          scp -r ./docs dwarshuiscom@dwarshuis.com:/test/spec-up-t-demo-on-documentation-website
+          scp -r ./docs dwarshuiscom@ssh.dwarshuis.com:/test/spec-up-t-demo-on-documentation-website
         env:
           SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS_DWARSHUIS }}
