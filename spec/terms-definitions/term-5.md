@@ -1,3 +1,0 @@
-[[def: term 5, term five, Term Five]]
-
-~ Nullam dignissim placerat interdum. Maecenas in cursus sapien, sit amet aliquam mi. Integer sed leo lacus. Integer vel purus porttitor, ullamcorper ipsum vel, tempor dui. Aenean euismod congue tellus vitae maximus. Vestibulum dignissim nunc ex, sed efficitur leo tristique faucibus. Phasellus tempus metus ac enim iaculis, et consequat est sollicitudin. Cras a nunc ac tellus posuere tristique nec et est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In placerat molestie ipsum et facilisis. Ut quis tincidunt felis.
