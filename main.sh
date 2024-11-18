@@ -2,18 +2,7 @@
 
 # Function to handle the user's choice
 function handle_choice() {
-    if [[ "$choice" == "0" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Publish (= Add terms, create pdf, look up xrefs and create spec)"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_publish
-
-    elif [[ "$choice" == "1" ]]; then
+    if [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -53,26 +42,6 @@ function handle_choice() {
         echo " "
         show_progress
         do_removexref
-    elif [[ "$choice" == "5" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Validate config file"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_validatespec
-    elif [[ "$choice" == "6" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Add new terms"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_addterms
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -141,26 +110,19 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
-    echo "   [0] Publish ¹"
-    echo "   "
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Look up xrefs"
     echo "   [4] Remove xref"
-    echo "   [5] Validate config file"
-    echo "   [6] Add new terms"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
     echo " "
-    echo " "
-    echo "   ¹ Publish = [6]+[2]+[3]+[1]"
-
 }
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "   Enter your choice (0/1/2/3/4/5/6/7/8/Q)? " choice
+    read -n 1 -r -p "   Enter your choice (1/2/3/4/7/8/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
 }
@@ -185,24 +147,9 @@ function do_removexref() {
     npm run removexref
 }
 
-function do_validatespec() {
-    clear
-    npm run validatespec
-}
-
-function do_addterms() {
-    clear
-    npm run addterms
-}
-
 function do_freeze() {
     clear
     npm run freeze
-}
-
-function do_publish() {
-    clear
-    npm run publish
 }
 
 function do_help() {
