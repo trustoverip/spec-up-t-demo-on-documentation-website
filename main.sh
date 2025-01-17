@@ -41,7 +41,7 @@ function handle_choice() {
         echo " "
         echo " "
         show_progress
-        do_removexref
+        do_xrefremove
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -142,9 +142,9 @@ function do_xrefs() {
     npm run xrefs
 }
 
-function do_removexref() {
+function do_xrefremove() {
     clear
-    npm run removexref
+    npm run xrefremove
 }
 
 function do_freeze() {
