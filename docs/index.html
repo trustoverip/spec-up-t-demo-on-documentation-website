@@ -31,7 +31,32 @@ code[class*=language-],pre[class*=language-]{color:#ccc;background:0 0;font-fami
 customElements.define("slide-panels",class extends HTMLElement{static get observedAttributes(){return["open"]}constructor(){super(),this.addEventListener("pointerup",e=>{e.target===this&&this.close()})}get active(){return this.getAttribute("open")}toggle(e){this.active===e?this.close():this.open(e)}open(e){this.setAttribute("open",e)}close(){this.removeAttribute("open")}attributeChangedCallback(e,t,s){switch(e){case"open":for(let e of this.children)e.id===s?e.setAttribute("open",""):e.removeAttribute("open","")}}}),customElements.define("detail-box",class extends HTMLElement{static get observedAttributes(){return["open"]}constructor(){super(),this.addEventListener("pointerup",e=>{e.target.hasAttribute("detail-box-toggle")&&(e.stopPropagation(),this.toggle())}),this.addEventListener("transitionend",e=>{let t=e.target;t.parentElement===this&&"SECTION"===t.tagName&&"height"===e.propertyName&&(t.style.height=this.hasAttribute("open")?"auto":null)})}toggle(){this.toggleAttribute("open")}attributeChangedCallback(e,t,s){switch(e){case"open":for(let e of this.children)if("SECTION"===e.tagName){if(null!==s)e.offsetHeight<e.scrollHeight&&(e.style.height=e.scrollHeight+"px");else if(e.offsetHeight>0){e.style.height=e.offsetHeight+"px";this.scrollHeight;e.style.height=0}break}}}}),customElements.define("tab-panels",class extends HTMLElement{constructor(){super(),delegateEvent("click","tab-panels > nav > *",(e,t)=>{let s=t.parentElement;s.parentElement===this&&this.setAttribute("selected-index",Array.prototype.indexOf.call(s.children,t))},{container:this,passive:!0})}static get observedAttributes(){return["selected-index"]}attributeChangedCallback(e,t,s){domReady.then(()=>{switch(e){case"selected-index":let e=s||0,t=this.querySelector("nav");if(t.parentElement===this){let s=t.children,i=s[e];for(let e of s)e.removeAttribute("selected");i&&i.setAttribute("selected","");let r=Array.prototype.filter.call(this.children,e=>{if("SECTION"===e.tagName)return e.removeAttribute("selected"),!0})[e];r&&r.setAttribute("selected","")}}})}});</script>
           
         
-    
+    <script>const allXTrefs = {
+  "xtrefs": [
+    {
+      "externalSpec": "test-1",
+      "term": "Aal",
+      "repoUrl": "https://github.com/blockchainbird/spec-up-xref-test-1",
+      "terms_dir": "spec/term-definitions",
+      "owner": "blockchainbird",
+      "repo": "spec-up-xref-test-1",
+      "site": null,
+      "commitHash": "bba30cbe256f6d0db4625f6b3fd7aaa6e93357b6",
+      "content": "[[def: AAL]]:\n\n~ See: [[ref: authenticator assurance level]].\n\n~ This is an addition, for testing purposes.\n\n~ Another addition for testing.\n\n~ Another edit, showing that an xref refers to the original version.\n\n~ Added on sep 8th, 2024, testing 123\n\ntestng 123\n"
+    },
+    {
+      "externalSpec": "does-not-exist",
+      "term": "Foo",
+      "repoUrl": null,
+      "terms_dir": null,
+      "owner": null,
+      "repo": null,
+      "site": null,
+      "commitHash": null,
+      "content": null
+    }
+  ]
+};</script>
 </head>
 
 <body features="source logo">
@@ -4111,17 +4136,31 @@ Citric acid cycle | 2 ATP ||
 </tbody>
 </table>
 <pre>
-|--|--|--|--|--|--|--|--|
-|♜|  |♝|♛|♚|♝|♞|♜|
-|  |♟|♟|♟|  |♟|♟|♟|
-|♟|  |♞|  |  |  |  | |
-|  |♗|  |  |♟|  |  | |
-|  |  |  |  |♙|  |  | |
-|  |  |  |  |  |♘|  | |
-|♙|♙|♙|♙|  |♙|♙|♙|
-|♖|♘|♗|♕|♔|  |  |♖|
+|     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ♜   |     | ♝   | ♛   | ♚   | ♝   | ♞   | ♜   |
+|     | ♟   | ♟   | ♟   |     | ♟   | ♟   | ♟   |
+| ♟   |     | ♞   |     |     |     |     |     |
+|     | ♗   |     |     | ♟   |     |     |     |
+|     |     |     |     | ♙   |     |     |     |
+|     |     |     |     |     | ♘   |     |     |
+| ♙   | ♙   | ♙   | ♙   |     | ♙   | ♙   | ♙   |
+| ♖   | ♘   | ♗   | ♕   | ♔   |     |     | ♖   |
+
 </pre>
 <table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>♜</td>
