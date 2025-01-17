@@ -2,7 +2,17 @@
 
 # Function to handle the user's choice
 function handle_choice() {
-    if [[ "$choice" == "1" ]]; then
+    if [[ "$choice" == "0" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Add content"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_add_content
+    elif [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -26,22 +36,42 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Look up xrefs"
+        echo "  Update existing xrefs"
         echo "  ************************************"
         echo " "
         echo " "
         show_progress
-        do_xrefs
+        do_xrefs_update
     elif [[ "$choice" == "4" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Remove xref"
+        echo "  Update all xrefs"
         echo "  ************************************"
         echo " "
         echo " "
         show_progress
-        do_xrefremove
+        do_xrefs_update_all
+    elif [[ "$choice" == "5" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Add, remove or view xref sources"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_add_remove_xref_source
+    elif [[ "$choice" == "6" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Configure this installation"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_configure
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -110,21 +140,31 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
+    echo "   [0] Add content"
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
-    echo "   [3] Look up xrefs"
-    echo "   [4] Remove xref"
+    echo "   [3] Update new xrefs"
+    echo "   [4] Update all xrefs"
+    echo "   [5] Add, remove or view xref source"
+    echo "   [6] Configure"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
+    echo " "
+    echo "   An xref is a reference to another repository."
     echo " "
 }
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "   Enter your choice (1/2/3/4/7/8/Q)? " choice
+    read -n 1 -r -p "   Enter your choice: " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
+}
+
+function do_add_content() {
+    clear
+    echo -e "\n\n\n   ********************\n\n\n   You can start adding your content to the markdown files in the “spec” directory.\n\n   You can do this by editing local files in an editor or by going to your repository on GitHub.\n\n\n   ********************"  
 }
 
 function do_render() {
@@ -137,14 +177,24 @@ function do_topdf() {
     npm run topdf
 }
 
-function do_xrefs() {
+function do_xrefs_update() {
     clear
-    npm run xrefs
+    npm run xtrefupdate
 }
 
-function do_xrefremove() {
+function do_xrefs_update_all() {
     clear
-    npm run xrefremove
+    npm run xtrefupdateall
+}
+
+function do_add_remove_xref_source() {
+    clear
+    npm run addremovexrefsource
+}
+
+function do_configure() {
+    clear
+    npm run configure
 }
 
 function do_freeze() {
@@ -154,14 +204,14 @@ function do_freeze() {
 
 function do_help() {
     clear
-    echo "\n\n\n   You will be redirected to the documentation website\n\n   (https://blockchainbird.github.io/spec-up-t-website/)."
+    echo -e "\n\n\n   You will be redirected to the documentation website\n\n   (https://trustoverip.github.io/spec-up-t-website/)."
     sleep 2
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        open "https://trustoverip.github.io/spec-up-t-website/"
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        xdg-open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        xdg-open "https://trustoverip.github.io/spec-up-t-website/"
     elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-        start "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        start "https://trustoverip.github.io/spec-up-t-website/"
     else
         echo "Unsupported OS."
     fi
