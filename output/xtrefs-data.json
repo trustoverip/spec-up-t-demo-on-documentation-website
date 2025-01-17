@@ -21,6 +21,17 @@
       "site": null,
       "commitHash": null,
       "content": null
+    },
+    {
+      "externalSpec": "test-1",
+      "term": "ABAC",
+      "repoUrl": "https://github.com/blockchainbird/spec-up-xref-test-1",
+      "terms_dir": "spec/term-definitions",
+      "owner": "blockchainbird",
+      "repo": "spec-up-xref-test-1",
+      "site": null,
+      "commitHash": "c71b3c5f041135544ab4c011cd3f845bbd5d85df",
+      "content": "[[def: ABAC]]:\n\n~ See: [[ref: attribute-based access control]].\n\n"
     }
   ]
 }
