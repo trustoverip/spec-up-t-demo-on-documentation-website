@@ -8,8 +8,8 @@
       "owner": "blockchainbird",
       "repo": "spec-up-xref-test-1",
       "site": null,
-      "commitHash": "bba30cbe256f6d0db4625f6b3fd7aaa6e93357b6",
-      "content": "[[def: AAL]]:\n\n~ See: [[ref: authenticator assurance level]].\n\n~ This is an addition, for testing purposes.\n\n~ Another addition for testing.\n\n~ Another edit, showing that an xref refers to the original version.\n\n~ Added on sep 8th, 2024, testing 123\n\ntestng 123\n"
+      "commitHash": "not found",
+      "content": "This term was not found in the external repository."
     },
     {
       "externalSpec": "does-not-exist",
@@ -19,8 +19,8 @@
       "owner": null,
       "repo": null,
       "site": null,
-      "commitHash": null,
-      "content": null
+      "commitHash": "not found",
+      "content": "This term was not found in the external repository."
     },
     {
       "externalSpec": "test-1",
@@ -30,8 +30,8 @@
       "owner": "blockchainbird",
       "repo": "spec-up-xref-test-1",
       "site": null,
-      "commitHash": "c71b3c5f041135544ab4c011cd3f845bbd5d85df",
-      "content": "[[def: ABAC]]:\n\n~ See: [[ref: attribute-based access control]].\n\n"
+      "commitHash": "not found",
+      "content": "This term was not found in the external repository."
     }
   ]
 }
