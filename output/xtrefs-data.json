@@ -24,7 +24,7 @@
     },
     {
       "externalSpec": "test-1",
-      "term": "ABAC",
+      "term": "AAL",
       "repoUrl": "https://github.com/blockchainbird/spec-up-xref-test-1",
       "terms_dir": "spec/term-definitions",
       "owner": "blockchainbird",
