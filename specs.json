@@ -1,7 +1,6 @@
 {
     "specs": [
         {
-            "title": "Spec-Up-T Starterpack",
             "spec_directory": "./spec",
             "spec_terms_directory": "terms-definitions",
             "output_path": "./docs",
@@ -11,6 +10,7 @@
                 "example-markup-in-markdown.md",
                 "outro.md"
             ],
+            "title": "Spec-Up-T Starterpack",
             "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
             "logo_link": "https://github.com/blockchainbird/spec-up-t",
             "source": {
@@ -30,7 +30,14 @@
                     "gh_page": "https://blockchainbird.github.io/spec-up-xref-test-2/",
                     "url": "https://github.com/blockchainbird/spec-up-xref-test-2",
                     "terms_dir": "spec/term-definitions"
+                },
+                {
+                    "external_spec": "test-3",
+                    "gh_page": "https://github.com/trustoverip/ctwg-main-glossary",
+                    "url": "https://github.com/trustoverip/ctwg-main-glossary",
+                    "terms_dir": "spec/terms-definitions"
                 }
+
             ],
             "katex": false,
             "searchHighlightStyle": "ssi"

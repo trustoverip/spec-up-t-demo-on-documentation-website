@@ -23,15 +23,16 @@
       "content": "This term was not found in the external repository."
     },
     {
-      "externalSpec": "test-1",
-      "term": "AAL",
-      "repoUrl": "https://github.com/blockchainbird/spec-up-xref-test-1",
-      "terms_dir": "spec/term-definitions",
-      "owner": "blockchainbird",
-      "repo": "spec-up-xref-test-1",
+      "externalSpec": "test-3",
+      "term": "scope",
+      "repoUrl": "https://github.com/trustoverip/ctwg-main-glossary",
+      "terms_dir": "spec/terms-definitions",
+      "owner": "trustoverip",
+      "repo": "ctwg-main-glossary",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/61128026?v=4",
       "site": null,
-      "commitHash": "not found",
-      "content": "This term was not found in the external repository."
+      "commitHash": "34c43ab76257278706d5013b2d1236a7b035f44c",
+      "content": "[[def: scope, scopes]]\n\n~ In the context of [[ref: terminology]], scope refers to the set of possible [[ref: concepts]] within which: a) a specific [[ref: term]] is intended to uniquely identify a [[ref: concept]], or b) a specific [[ref: glossary]] is intended to identify a set of [[ref: concepts]]. In the context of [[ref: identification]], scope refers to the set of possible entities within which a specific entity must be uniquely identified. In the context of [[ref: specifications]], scope refers to the set of problems (the problem space) within which the specification is intended to specify solutions.\n\n~ Supporting definitions:\n\n~ [eSSIF-Lab](https://essif-lab.github.io/framework/docs/essifLab-glossary#scope): the extent of the area or subject matter (which we use, e.g., to define [pattern](https://essif-lab.github.io/framework/docs/@), [concept](https://essif-lab.github.io/framework/docs/@), [term](https://essif-lab.github.io/framework/docs/@) and [glossaries](https://essif-lab.github.io/framework/docs/@) in, but it serves other purposes as well).\n"
     }
   ]
 }
