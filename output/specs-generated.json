@@ -15,7 +15,7 @@
         "outro.md"
       ],
       "title": "Spec-Up-T Starterpack",
-      "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
+      "logo": "https://raw.githubusercontent.com/trustoverip/spec-up-t/refs/heads/master/src/install-from-boilerplate/boilerplate/static/logo.svg",
       "logo_link": "https://github.com/blockchainbird/spec-up-t",
       "source": {
         "host": "github",
